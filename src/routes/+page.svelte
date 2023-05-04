@@ -1,15 +1,25 @@
+<script>
+    import { scrapeSite } from "@titanium-clad-studios/contentify-core";
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        scrapeSite();
+    });
+
+</script>
+
 
 <div class="content-container">
-    <h1>Contentify Demo</h1>
+    <h1 data-contentify="mainHeader">Contentify Demo</h1>
 
-    <p>This is a demo of Contentify. Contentify is a tool that stores mappings of elements on a webpage and their contents. An editor is then exposed to website administrators, allowing anyone to edit website content on the fly.</p>
+    <p data-contentify="mainCopy">This is a demo of Contentify. Contentify is a tool that stores mappings of elements on a webpage and their contents. An editor is then exposed to website administrators, allowing anyone to edit website content on the fly.</p>
 
     <p>Contentify is:</p>
     <ul>
-        <li>Easy to use for frontend developers.</li>
-        <li>Easy to use for website admins.</li>
-        <li>Free and open source.</li>
-        <li>Fast and secure.</li>
+        <li data-contentify="easeList-1">Easy to use for frontend developers.</li>
+        <li data-contentify="easeList-2">Easy to use for website admins.</li>
+        <li data-contentify="easeList-3">Free and open source.</li>
+        <li data-contentify="easeList-4">Fast and secure.</li>
     </ul>
 </div>
 
