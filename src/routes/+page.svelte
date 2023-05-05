@@ -1,5 +1,5 @@
 <script>
-    import { scrapeSite } from "@titanium-clad-studios/contentify-core";
+    import { scrapeSite } from "@titanium-clad-studios/contentify-core"
     import { onMount } from "svelte";
 
     onMount(() => {
