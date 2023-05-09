@@ -15,6 +15,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"node-html-parser": "^6.1.5"
+		"node-html-parser": "^6.1.5",
+		"redis": "^4.6.6"
 	}
 }
