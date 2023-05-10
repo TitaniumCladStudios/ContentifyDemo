@@ -25,4 +25,8 @@ export async function load(){
         await client.set(contentify, element.innerText);
     }
     await client.disconnect();
+
+    return {
+        page: page
+    }
 }
