@@ -23,6 +23,7 @@ export async function load(){
         console.log(contentify);
         console.log(element.innerText);
         await client.set(contentify, element.innerText);
+        element.contentEditable = true;
     }
     await client.disconnect();
 
