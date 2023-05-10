@@ -20,8 +20,6 @@ export async function load(){
 
     for(let element of editable){
         let contentify = element.getAttribute("data-contentify");
-        console.log(contentify);
-        console.log(element.innerText);
         await client.set(contentify, element.innerText);
         element.contentEditable = true;
     }
