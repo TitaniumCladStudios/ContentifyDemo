@@ -6,7 +6,6 @@ const client = createClient({
 })
 
 export async function load(){
-
     let page = await fetch("http://localhost:5173/")
     .then(response => response.text())
     .then(html => {
@@ -25,4 +24,5 @@ export async function load(){
         console.log(element.innerText);
         await client.set(contentify, element.innerText);
     }
+    await client.disconnect();
 }
