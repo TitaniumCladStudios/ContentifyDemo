@@ -47,4 +47,10 @@
         text-decoration: underline;
         color: #000;
     }
+    @media(max-width: 850px){
+        .content-container {
+            width: 90%;
+            margin: 10px;
+        }
+    }
 </style>
