@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { goto } from "$app/navigation"
 
     export let data;
 
@@ -32,15 +33,22 @@
             }
         });
 
-        let total = await response.json();
-        console.log(total);
+        let status = await response.json();
+        console.log(status);
+    }
+    function cancel(){
+        confirm("Are you sure you want to exit? Any unsave changes will be discarded.")
+        goto("/");
     }
 </script>
 
 <div class="edit-banner">
     <div></div>
     <p>Editing page</p>
-    <button on:click={saveData}>Save</button>
+    <div class="button-bar">
+        <button on:click={saveData}>Save</button>
+        <button class="cancel" on:click={cancel}>Cancel</button>
+    </div>
 </div>
 
 {@html data.page}
@@ -72,6 +80,9 @@
     }
     button:hover {
         cursor: pointer;
+    }
+    .cancel {
+        background-color: #e35656;
     }
 </style>
 
