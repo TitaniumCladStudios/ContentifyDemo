@@ -1,12 +1,13 @@
 import { parse } from "node-html-parser";
 import { createClient } from 'redis';
+import { env } from "$env/dynamic/private"
 
 const client = createClient({
     url: "redis://default:XoHxlMoZc52Ep17ubr4mWHioIgmflR48@redis-14041.c8.us-east-1-4.ec2.cloud.redislabs.com:14041"
 })
 
 export async function load(){
-    let page = await fetch("http://localhost:5173/")
+    let page = await fetch(`${env.APP_BASE_URL}/`)
     .then(response => response.text())
     .then(html => {
         return html;
