@@ -9,12 +9,24 @@
             el.contentEditable = true;
         }
     })
-    let a = 5;
-    let b = 5;
     async function saveData(){
+        let modifiedEls = document.querySelectorAll("[data-contentify]");
+        let elementMeta = [];
+        for(let element of modifiedEls){
+            let elementObj = {};
+            let contentify = element.getAttribute("data-contentify");
+            elementObj.contentify = contentify;
+            elementObj.text = element.innerText;
+            elementMeta.push(elementObj);
+        }
+
+        let postData = JSON.stringify({
+            elements: elementMeta
+        })
+
         const response = await fetch('/api/save', {
             method: 'POST',
-            body: JSON.stringify({ a, b }),
+            body: postData,
             headers: {
                 'content-type': 'application/json'
             }
