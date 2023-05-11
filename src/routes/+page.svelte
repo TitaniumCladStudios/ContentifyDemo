@@ -19,6 +19,8 @@
 
     <p data-contentify="mainCopy">{content.mainCopy}</p>
 
+   <a href="/edit">Try it!</a> 
+
     <p>Contentify is:</p>
     <ul>
         <li data-contentify="easeList1">{content.easeList1}</li>
@@ -34,5 +36,15 @@
         padding: 30px;
         background-color: #fff;
         border-radius: 30px;
+    }
+    a {
+        color: #e35656;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #000;
     }
 </style>
