@@ -1,3 +1,7 @@
+<script>
+    export let data;
+</script>
+
 <div class="content-container">
     <h1 data-contentify="mainHeader">Contentify Demo</h1>
 

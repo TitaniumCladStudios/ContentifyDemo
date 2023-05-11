@@ -15,6 +15,7 @@ export async function POST({ request }){
         let contentify = element.contentify
         await client.set(contentify, element.text);
     }
+    await client.set("edited", "true");
     await client.disconnect();
 
     return json("Success");
