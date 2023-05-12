@@ -35,6 +35,9 @@
 
         let status = await response.json();
         console.log(status);
+        if(status === "Success"){
+            document.getElementById("success").showModal();
+        }
     }
     function cancel(){
         confirm("Are you sure you want to exit? Any unsave changes will be discarded.")
@@ -50,6 +53,15 @@
         <button class="cancel" on:click={cancel}>Cancel</button>
     </div>
 </div>
+
+<dialog id="success">
+    <h3>Your changes are live!</h3>
+    <p>When you visit the page you will be able to see the copy edits you just made!</p>
+    <div class="dialog-button-bar">
+        <a href="/">View Page</a>
+        <button on:click={() => document.getElementById('success').close()}>Keep Editing</button>
+    </div>
+</dialog>
 
 {@html data.page}
 
@@ -83,6 +95,33 @@
     }
     .cancel {
         background-color: #e35656;
+    }
+    dialog {
+        width: 40%;
+        border: none;
+        padding: 2vw;
+        border-radius: 15px;
+    }
+    dialog::backdrop {
+        background: rgba(0, 0, 0, .6);
+        /* backdrop-filter: blur(1px); */
+    }
+    .dialog-button-bar {
+        display: flex;
+        justify-content: end;
+    }
+    a {
+        text-decoration: none;
+        background-color: #7CFFC4;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 30px;
+        font-weight: 400;
+        font-family: 'Barlow', sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        color: #000;
+        margin-right: 10px;
     }
 </style>
 
