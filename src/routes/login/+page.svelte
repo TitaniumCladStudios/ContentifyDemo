@@ -3,12 +3,12 @@
     import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
   
     export let data;
+    console.log(data);
   
     // Client API:
     const { form, errors, constraints } = superForm(data.form);
 </script>
 
-  
 <div class="content-container">
     <h1>Login to Edit</h1>
     <form method="POST">
