@@ -1,6 +1,5 @@
 <script>
     import { onMount } from "svelte";
-    import { goto } from "$app/navigation"
 
     export let data;
 
@@ -41,7 +40,7 @@
     }
     function cancel(){
         confirm("Are you sure you want to exit? Any unsave changes will be discarded.")
-        goto("/");
+        window.location.href="/"
     }
     async function logout(){
         let response = await fetch("/api/logout");
