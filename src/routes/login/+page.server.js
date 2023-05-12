@@ -44,7 +44,7 @@ export const actions = {
 
     // TODO: Do something with the validated data
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, form.data.email, form.data.password)
+    await signInWithEmailAndPassword(auth, form.data.email, form.data.password)
     .then((userCredential) => {
         // Signed in 
         console.log("Signed in");
@@ -55,6 +55,6 @@ export const actions = {
         const errorMessage = error.message;
     });
 
-    throw redirect(307, "/edit")
+    throw redirect(303, "/edit")
   }
 };
