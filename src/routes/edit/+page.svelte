@@ -43,6 +43,12 @@
         confirm("Are you sure you want to exit? Any unsave changes will be discarded.")
         goto("/");
     }
+    async function logout(){
+        let response = await fetch("/api/logout");
+        if(response.status == 200){
+            goto("/");
+        }
+    }
 </script>
 
 <div class="edit-banner">
@@ -51,7 +57,7 @@
     <div class="button-bar">
         <button on:click={saveData}>Save</button>
         <button class="cancel" on:click={cancel}>Cancel</button>
-        <a href="/logout">Logout</a>
+        <button class="logout" on:click={logout}>Logout</button>
     </div>
 </div>
 
@@ -96,6 +102,9 @@
     }
     .cancel {
         background-color: #e35656;
+    }
+    .logout {
+        background-color: #7CFFC4;
     }
     dialog {
         width: 40%;

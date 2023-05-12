@@ -1,12 +1,13 @@
 import { redirect } from '@sveltejs/kit';
 import { getAuth, signOut } from "firebase/auth";
+import { json } from '@sveltejs/kit';
 
 export async function GET(){
     const auth = getAuth();
-    signOut(auth).then(() => {
+    let response = await signOut(auth).then(() => {
     // Sign-out successful.
-    throw redirect(303, "/");
     }).catch((error) => {
     // An error happened.
     });
+    return json(response)
 }
