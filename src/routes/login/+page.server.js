@@ -55,6 +55,6 @@ export const actions = {
         const errorMessage = error.message;
     });
 
-    return { form };
+    throw redirect(307, "/edit")
   }
 };
