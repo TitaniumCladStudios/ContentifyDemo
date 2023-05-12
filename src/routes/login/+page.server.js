@@ -1,6 +1,8 @@
 import { fail } from '@sveltejs/kit';
 import { z } from 'zod';
 import { superValidate } from 'sveltekit-superforms/server';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { redirect } from '@sveltejs/kit';
 
 const schema = z.object({
   email: z.string().email(),
@@ -25,6 +27,17 @@ export const actions = {
     }
 
     // TODO: Do something with the validated data
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, form.data.email, form.data.password)
+    .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        throw redirect(307, '/edit');
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+    });
 
     return { form };
   }
