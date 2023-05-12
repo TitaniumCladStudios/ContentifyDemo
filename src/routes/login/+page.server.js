@@ -49,7 +49,6 @@ export const actions = {
         // Signed in 
         console.log("Signed in");
         const user = userCredential.user;
-        throw redirect(307, '/edit');
     })
     .catch((error) => {
         const errorCode = error.code;
