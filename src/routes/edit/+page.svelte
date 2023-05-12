@@ -51,6 +51,7 @@
     <div class="button-bar">
         <button on:click={saveData}>Save</button>
         <button class="cancel" on:click={cancel}>Cancel</button>
+        <a href="/logout">Logout</a>
     </div>
 </div>
 
