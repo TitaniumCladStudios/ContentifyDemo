@@ -1,7 +1,8 @@
 import { createClient } from 'redis';
+import { env } from "$env/dynamic/private";
 
 const client = createClient({
-    url: "redis://default:XoHxlMoZc52Ep17ubr4mWHioIgmflR48@redis-14041.c8.us-east-1-4.ec2.cloud.redislabs.com:14041"
+    url: env.REDIS_CONNECTION_STRING
 })
 
 export async function fetchContent(keys){
