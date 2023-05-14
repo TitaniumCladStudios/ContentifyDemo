@@ -1,6 +1,6 @@
 import { createClient } from 'redis';
 import { json } from '@sveltejs/kit';
-import { env } from "$/env/dynamic/private";
+import { env } from "$env/dynamic/private";
 
 const client = createClient({
     url: env.REDIS_CONNECTION_STRING
