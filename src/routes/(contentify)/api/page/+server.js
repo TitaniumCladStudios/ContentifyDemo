@@ -3,6 +3,7 @@ import { createClient } from 'redis';
 import { env } from "$env/dynamic/private"
 import { redirect } from '@sveltejs/kit';
 import { getAuth } from "firebase/auth";
+import { json } from "@sveltejs/kit"
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -34,8 +35,6 @@ export async function GET({ url }){
     // Initialize Firebase Authentication and get a reference to the service
     const auth = getAuth(app);
 
-    console.log(auth.currentUser);
-
     if(auth.currentUser == null){
         throw redirect(307, '/login');
     }
@@ -60,7 +59,7 @@ export async function GET({ url }){
     await client.set("edited", "true");
     await client.disconnect();
 
-    return {
-        page: page
-    }
+    console.log(page);
+
+    return json(page);
 }

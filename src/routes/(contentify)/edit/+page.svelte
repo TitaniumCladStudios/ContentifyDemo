@@ -72,8 +72,21 @@
         }
     }
     async function render(){
-        let newPage = await fetch(`/api/page?page=${selected}`);
-        console.log(newPage);
+        let newPage = await fetch(`/api/page?page=${selected}`)
+        .then(data => {
+            return data.json();
+        })
+            .then(page => {
+            return page;
+        });
+        page = newPage;
+        setTimeout(() => {
+            let contentifyEls = document.querySelectorAll("[data-contentify]");
+            console.log(contentifyEls);
+            for(let el of contentifyEls){
+                el.contentEditable = true;
+            }
+        } , 500)
     }
 </script>
 

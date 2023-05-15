@@ -32,8 +32,6 @@ export async function load(){
     // Initialize Firebase Authentication and get a reference to the service
     const auth = getAuth(app);
 
-    console.log(auth.currentUser);
-
     if(auth.currentUser == null){
         throw redirect(307, '/login');
     }
