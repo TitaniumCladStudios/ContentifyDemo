@@ -38,7 +38,7 @@ export async function load(){
         throw redirect(307, '/login');
     }
 
-    let page = await fetch(`${env.APP_BASE_URL}/`)
+    let page = await fetch(`${env.APP_BASE_URL}/example`)
     .then(response => response.text())
     .then(html => {
         return html;

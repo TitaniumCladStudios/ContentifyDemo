@@ -4,7 +4,15 @@
     export let data;
 
     onMount(() => {
+        setTimeout(() => {
+            let contentifyEls = document.querySelectorAll("[data-contentify]");
+            console.log(contentifyEls);
+            for(let el of contentifyEls){
+                el.contentEditable = true;
+            }
+        } , 500)
         let contentifyEls = document.querySelectorAll("[data-contentify]");
+        console.log(contentifyEls);
         for(let el of contentifyEls){
             el.contentEditable = true;
         }
@@ -51,7 +59,6 @@
 </script>
 
 <div class="edit-banner">
-    <div></div>
     <p>Editing page</p>
     <div class="button-bar">
         <button on:click={saveData}>Save</button>
