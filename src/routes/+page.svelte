@@ -21,6 +21,8 @@
 
    <a href="/edit">Try it!</a> 
 
+   <a href="/example">Or look at another page!</a>
+
     <p>Contentify is:</p>
     <ul>
         <li data-contentify="easeList1">{content.easeList1}</li>
@@ -43,6 +45,7 @@
         text-decoration: none;
         font-size: 20px;
         font-weight: bold;
+        display: block;
     }
     a:hover {
         text-decoration: underline;
