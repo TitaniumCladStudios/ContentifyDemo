@@ -5,7 +5,7 @@
 
     let page = data.page;
 
-    let pages = [
+    let pageOptions = [
         {
             name: "Home",
             value: "/"
@@ -15,6 +15,8 @@
             value: "/example"
         }
     ]
+
+    let selected = "/";
 
     onMount(() => {
         setTimeout(() => {
@@ -69,13 +71,17 @@
             goto("/");
         }
     }
+    async function render(){
+        let newPage = await fetch(`/api/page?page=${selected}`);
+        console.log(newPage);
+    }
 </script>
 
 <div class="edit-banner">
     <div class="title">
         <p>Editing page</p>
-        <select>
-            {#each pages as page}
+        <select bind:value={selected} on:change={render}>
+            {#each pageOptions as page}
                 <option value={page.value}>{page.name}</option>
             {/each}
         </select>
