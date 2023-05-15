@@ -11,5 +11,5 @@
 <h1 data-contentify="pageHeader">Another Page</h1>
 <p data-contentify="pageContent">What about repeating components?</p>
 
-<SectionText keys={keys1} content={data.content1}/>
-<SectionText keys={keys2} content={data.content2}/>
+<SectionText keys={keys1} componentHeader={data.content1.componentHeader1} componentText={data.content1.componentText1}/>
+<SectionText keys={keys2} componentHeader={data.content2.componentHeader2} componentText={data.content2.componentText2}/>
