@@ -3,6 +3,19 @@
 
     export let data;
 
+    let page = data.page;
+
+    let pages = [
+        {
+            name: "Home",
+            value: "/"
+        },
+        {
+            name: "Example",
+            value: "/example"
+        }
+    ]
+
     onMount(() => {
         setTimeout(() => {
             let contentifyEls = document.querySelectorAll("[data-contentify]");
@@ -59,7 +72,14 @@
 </script>
 
 <div class="edit-banner">
-    <p>Editing page</p>
+    <div class="title">
+        <p>Editing page</p>
+        <select>
+            {#each pages as page}
+                <option value={page.value}>{page.name}</option>
+            {/each}
+        </select>
+    </div>
     <div class="button-bar">
         <button on:click={saveData}>Save</button>
         <button class="cancel" on:click={cancel}>Cancel</button>
@@ -76,7 +96,7 @@
     </div>
 </dialog>
 
-{@html data.page}
+{@html page}
 
 
 <style>
@@ -111,6 +131,15 @@
     }
     .logout {
         background-color: #7CFFC4;
+    }
+    .title {
+        display: flex;
+    }
+    .title > select {
+        align-self: center;
+        margin-left: 20px;
+        padding: 10px;
+        border-radius: 5px;
     }
     dialog {
         width: 40%;
