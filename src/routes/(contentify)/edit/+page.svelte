@@ -88,6 +88,9 @@
             }
         } , 500)
     }
+    function view(){
+        window.location.href = selected;
+    }
 </script>
 
 <div class="edit-banner">
@@ -110,7 +113,7 @@
     <h3>Your changes are live!</h3>
     <p>When you visit the page you will be able to see the copy edits you just made!</p>
     <div class="dialog-button-bar">
-        <a href={selected}>View Page</a>
+        <button class="view" on:click={view}>View Page</button>
         <button on:click={() => document.getElementById('success').close()}>Keep Editing</button>
     </div>
 </dialog>
@@ -145,6 +148,9 @@
     button:hover {
         cursor: pointer;
     }
+    .view {
+        background-color: #7CFFC4;;
+    }
     .cancel {
         background-color: #e35656;
     }
@@ -173,19 +179,6 @@
     .dialog-button-bar {
         display: flex;
         justify-content: end;
-    }
-    a {
-        text-decoration: none;
-        background-color: #7CFFC4;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 30px;
-        font-weight: 400;
-        font-family: 'Barlow', sans-serif;
-        font-weight: bold;
-        font-size: 14px;
-        color: #000;
-        margin-right: 10px;
     }
 </style>
 
