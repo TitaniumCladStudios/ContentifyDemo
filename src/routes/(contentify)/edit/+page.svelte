@@ -149,7 +149,8 @@
         cursor: pointer;
     }
     .view {
-        background-color: #7CFFC4;;
+        background-color: #7CFFC4;
+        margin-right: 20px;
     }
     .cancel {
         background-color: #e35656;
