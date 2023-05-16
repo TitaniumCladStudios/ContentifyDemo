@@ -110,7 +110,7 @@
     <h3>Your changes are live!</h3>
     <p>When you visit the page you will be able to see the copy edits you just made!</p>
     <div class="dialog-button-bar">
-        <a href="/">View Page</a>
+        <a href={selected}>View Page</a>
         <button on:click={() => document.getElementById('success').close()}>Keep Editing</button>
     </div>
 </dialog>
