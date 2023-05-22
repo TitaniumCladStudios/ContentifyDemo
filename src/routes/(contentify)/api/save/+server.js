@@ -18,6 +18,9 @@ const firebaseConfig = {
     appId: "1:829223919941:web:67515f228008e674031e2c"
 };
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 const client = createClient({
     url: env.REDIS_CONNECTION_STRING
 })
