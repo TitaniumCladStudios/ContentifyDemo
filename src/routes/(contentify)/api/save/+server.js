@@ -10,7 +10,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDo1bBJXVQS7EQZtMc0xXlj-UGTEssrhFE",
+    apiKey: env.FIREBASE_API_KEY,
     authDomain: "contentifydemo.firebaseapp.com",
     projectId: "contentifydemo",
     storageBucket: "contentifydemo.appspot.com",

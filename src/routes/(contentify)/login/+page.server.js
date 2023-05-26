@@ -1,6 +1,7 @@
 import { fail } from '@sveltejs/kit';
 import { z } from 'zod';
 import { superValidate } from 'sveltekit-superforms/server';
+import { env } from "$env/dynamic/private"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { redirect } from '@sveltejs/kit';
 // Import the functions you need from the SDKs you need
@@ -11,12 +12,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDo1bBJXVQS7EQZtMc0xXlj-UGTEssrhFE",
-    authDomain: "contentifydemo.firebaseapp.com",
-    projectId: "contentifydemo",
-    storageBucket: "contentifydemo.appspot.com",
-    messagingSenderId: "829223919941",
-    appId: "1:829223919941:web:67515f228008e674031e2c"
+  apiKey: env.FIREBASE_API_KEY,
+  authDomain: "contentifydemo.firebaseapp.com",
+  projectId: "contentifydemo",
+  storageBucket: "contentifydemo.appspot.com",
+  messagingSenderId: "829223919941",
+  appId: "1:829223919941:web:67515f228008e674031e2c"
 };
 
 
